@@ -8,4 +8,4 @@ echo  "-> starting rpiplay <-"
 NAME=${RPI_PLAY_NAME:=RPiPlay}
 AUDIO=${RPI_PLAY_AUDIO:=hdmi}
 
-./rpiplay -a $AUDIO -n $NAME "$@"
+exec ./rpiplay -a $AUDIO -n $NAME "$@"
