@@ -15,9 +15,7 @@ Please also read [this issue](https://github.com/FD-/RPiPlay/issues/8).
 ## Usage
 Run the image:
 ```
-docker run \
-  --net=host \
-  hown3d/rpiplay
+docker run --net=host hown3d/rpiplay
 ```
 - Host network is obviously required. 
 
