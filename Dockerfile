@@ -1,6 +1,6 @@
 FROM arm64v8/debian:stable AS builder
 
-RUN apt-get update && apt-get install -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ wget zip
+RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ wget zip
 
 WORKDIR /work
 
@@ -12,7 +12,7 @@ RUN git clone https://github.com/FD-/RPiPlay.git rpiplay && cd rpiplay && mkdir 
 FROM arm64v8/debian:stable
 COPY --from=builder /work/RPiPlay/build /rpiplay/
 
-RUN apt-get update && apt-get install -y libavahi-compat-libdnssd-dev libplist-dev libssl-dev
+RUN apt-get update && apt-get install --no-install-recommends -y libavahi-compat-libdnssd-dev libplist-dev libssl-dev
 
 WORKDIR /rpiplay
 
