@@ -17,8 +17,7 @@ Run the image:
 ```
 docker run \
   --net=host \
-  --privileged \
-  djhofmann/rpiplay
+  hown3d/rpiplay
 ```
 - Host network is obviously required. 
 
