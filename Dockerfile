@@ -7,8 +7,10 @@ WORKDIR /work
 RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ make ca-certificates
 # Get RPiPlay source code
 
-RUN git clone https://github.com/FD-/RPiPlay.git rpiplay; cd rpiplay && mkdir build; cd build 
+RUN git clone https://github.com/FD-/RPiPlay.git rpiplay
+RUN mkdir -p rpiplay/build
 
+WORKDIR /work/rpiplay/build 
 
 RUN cmake .. && make
 
