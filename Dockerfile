@@ -16,7 +16,7 @@ RUN cmake .. && make
 
 
 FROM arm64v8/debian:stable
-COPY --from=builder /work/RPiPlay/build/rpiplay /rpiplay/
+COPY --from=builder /work/rpiplay/build/rpiplay /rpiplay/
 
 RUN apt-get update && apt-get install --no-install-recommends -y libavahi-compat-libdnssd-dev libplist-dev libssl-dev
 
