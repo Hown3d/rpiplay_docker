@@ -1,4 +1,4 @@
-FROM arm64v8/debian:9 AS builder
+FROM arm64v8/debian:stable AS builder
 
 RUN apt-get update && apt-get install -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ wget zip
 
