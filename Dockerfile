@@ -1,6 +1,6 @@
 FROM arm64v8/debian:stable AS builder
 
-RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ wget zip
+RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ make
 
 WORKDIR /work
 
