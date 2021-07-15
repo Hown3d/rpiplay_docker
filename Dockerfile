@@ -4,10 +4,11 @@ FROM arm64v8/debian:stable AS builder
 WORKDIR /work
 
 
+RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ make ca-certificates
 # Get RPiPlay source code
+
 RUN git clone https://github.com/FD-/RPiPlay.git  rpiplay && cd rpiplay && mkdir build && cd build 
 
-RUN apt-get update && apt-get install --no-install-recommends -y git cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev g++ make ca-certificates
 
 RUN cmake .. && make
 
